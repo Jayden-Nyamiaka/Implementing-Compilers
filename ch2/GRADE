@@ -1,0 +1,74 @@
+Grading notes for assignment 1
+==============================
+
+Author: Adishree Ghatare
+
+OVERALL GRADE: 94/100
+GRADE AFTER REWORK: 100/100
+
+Overall, looks very good work!
+All behavioral tests pass.
+Some single-pass tests failed, namely uniquify, remove complex operands.
+These should be relatively simple to fix; I described how in the comments.
+Some minor style issues, but generally readable and high-quality code!
+
+== Style
+
+Very readable; nice job!
+
+Don't use `match` to pattern-match something which has only one
+variant; use `let`. See `assign_homes.ml`:`match info with | Info1 tup` and
+`prelude_conclusion.ml:asm_of_lb`.
+
+== Comments
+
+* uniquify
+
+You are failing this single-pass test. While your code is not inherently wrong,
+you can match the reference output by changing the order of evaluation in your
+`let` case (marked in the code).
+
+* remove complex operands
+
+You are failing this single-pass test. You need to atomize the subexpressions
+of `Add`, `Sub`, `Negate` in `rco_atom` to pass the tests.
+
+* explicate control
+
+All good. Slightly preferred to use `let`s in `convert_exp` to specify
+the order of evaluation, but it works fine without it.
+
+* select instructions
+
+In `convert_atm` and `convert_exp`, make sure you are explicitly writing
+the source language type, e.g., the match case should be 
+`C.Var v -> Var v`.
+
+There's an odd syntax use in `convert_exp`, e.g., 
+`Negq dest :: (Movq (convert_atm i, dest) :: bl)` can be 
+written `[Negq dest; Movq (convert_atm i, dest) :: bl]`.
+
+Seems like your `helper` could be simplified with a `List.fold`, but
+it works fine as is. 
+
+Watch your line lengths here! We don't want them to get longer than 
+80 characters.
+
+* assign homes
+
+Looks good! You could have pulled out your helpers into separate functions to
+simplify the flow of your code, but it's not necessary.
+
+* patch instructions
+
+One cool thing you could do to avoid using if's in your cases is a 
+`match...when` statement, e.g., instead of `| X.Addq (a, b) -> `, you can
+write `| X.Addq (a, b) when (needs_patching a b) -> `.
+
+Your recursive `convert_instructions` could be simplified by
+using `List.concat_map`.
+
+* prelude and conclusion
+
+You can just use a `let` statement instead of matching one case in 
+`asm_of_lb`.

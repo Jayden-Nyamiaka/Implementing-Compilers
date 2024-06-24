@@ -1,0 +1,46 @@
+Grading notes for assignment 3
+==============================
+
+Author: Adishree Ghatare
+
+OVERALL GRADE: 99/100
+GRADE AFTER REWORK: 100/100
+
+Good job! Really nice readable code.
+All behavioral tests and all single-pass tests passed.
+
+== Comments
+
+* shrink
+
+* uniquify
+
+line 24: You should make the order of operations for these recursive
+calls explicit. 
+
+* remove complex operands
+
+* explicate control
+
+You should make order of operations explicit in `explicate_assign`.
+
+* remove unused
+
+* select instructions
+
+`cc_of_op` (provided in Types) simplifies code around lines 43 and 63.
+I would recommend giving all the provided functions a glance!
+
+* uncover live
+
+Nice, formatting made this particularly easy to read. :)
+
+* build interference
+
+* allocate registers
+
+* remove jumps
+
+* patch instructions
+
+* prelude and conclusion

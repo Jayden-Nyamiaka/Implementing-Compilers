@@ -1,0 +1,34 @@
+Grading notes for assignment 4
+==============================
+
+Author: Adishree Ghatare
+
+OVERALL GRADE: 100/100
+
+Great job!
+All behavioral tests and all single-pass tests passed.
+
+== Style
+
+== Comments
+
+* shrink
+
+* uniquify
+
+Nice error handling for `SetBang` `VarMap.find` case.
+
+* uncover_get
+
+Nice use of recursion in `collect_set_vars`.
+
+* remove_complex
+
+* explicate_control
+
+* select_instructions
+
+* uncover_live
+
+Your `if` clause on line 29 could make more sense as a 
+`match` statement, but what you have works nicely as well!

@@ -1,0 +1,40 @@
+Grading notes for assignment 5
+==============================
+
+Author: Adishree Ghatare
+
+OVERALL GRADE: 99/100
+
+Great job!
+All single-pass tests passed.
+
+Thank you for sharing the video of your working behavior
+tests!
+
+== Style
+
+== Comments
+
+* expose allocation
+
+Nice use of comments to clarify the logic of your code. 
+
+* remove complex
+
+* explicate control
+
+* select instructions
+
+Minor detail, but note the source file in your `failwith` messages.
+ 
+* uncover live
+
+* build interference
+
+* allocate registers
+
+* patch instructions
+
+* prelude and conclusion
+
+Lovely commenting in this file!

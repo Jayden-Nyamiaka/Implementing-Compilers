@@ -1,0 +1,48 @@
+Grading notes for assignment 2
+==============================
+
+Author: Adishree Ghatare
+
+OVERALL GRADE: 95/100
+GRADE AFTER REWORK: 100/100
+
+Good job! Generally quite readable code.
+All behavioral tests pass.
+Failing single-pass tests: remove complex.
+
+== Style
+
+You are frequently using `if` / `then` clauses when `match` might be
+more appropriate. For example, in `uncover_live.ml:add_read_regs`,
+you can use `(idx, aft)` matching to pull out `0, _` and `_, h :: t` cases.
+(You could also use `take` or `LocSet.map` to simplify that function,
+in particular.)
+
+== Comments
+
+* remove complex
+
+You are failing this single-pass test: probably for similar reasons
+to last week.
+
+* select instructions
+
+* uncover live
+
+* build interference
+
+Using a `List.fold_left` would simplify a lot of this code: 
+`add_edge_comp_two`, `instr_helper`, `run_helper`. I don't think it's
+necessary to rewrite all of this: maybe you can just do `add_edge_comp_two` 
+for practice and keep this in mind in the future assignments.
+
+* graph coloring
+
+* allocate registers
+
+* patch instructions
+
+`convert_block`: Update your error message (should mention
+`allocate_registers` rather than `assign_homes`).
+
+* prelude and conclusion
